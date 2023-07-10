@@ -148,4 +148,9 @@ public class DesignerStepDefinition {
 
         designerPage.kaydet.click();
     }
+
+    @And("Kullanıcı mehmetDemir klasörüne tıklar")
+    public void kullanıcıMehmetDemirKlasörüneTıklar() {
+        actions.doubleClick(designerPage.mehmetDemir).perform();
+    }
 }
