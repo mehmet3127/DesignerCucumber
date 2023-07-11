@@ -3,6 +3,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +20,7 @@ public class DesignerStepDefinition {
 
     DesignerPage designerPage = new DesignerPage();
     Actions actions = new Actions(Driver.getDriver());
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(),70);
-
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 100);
 
 
     @Given("Kullanici designer sayfasina gider")
@@ -93,7 +93,7 @@ public class DesignerStepDefinition {
     @And("Kullanıcı Campaigns klasörüne tıklar")
     public void kullanıcıCampaignsKlasörüneTıklar() {
 
-        wait.until(ExpectedConditions.visibilityOf(designerPage.campaigns));
+        wait.until(ExpectedConditions.elementToBeClickable(designerPage.campaigns));
         actions.doubleClick(designerPage.campaigns).perform();
 
     }
@@ -151,6 +151,31 @@ public class DesignerStepDefinition {
 
     @And("Kullanıcı mehmetDemir klasörüne tıklar")
     public void kullanıcıMehmetDemirKlasörüneTıklar() {
+
         actions.doubleClick(designerPage.mehmetDemir).perform();
+    }
+
+    @And("Kullanıcı istediği kampanyayı seçer")
+    public void kullanıcıIstediğiKampanyayıSeçer() {
+
+        actions.doubleClick(designerPage.cucumberTest01).perform();
+    }
+
+    @And("Kullanıcı AkışTasarım penceresine tıklar")
+    public void kullanıcıAkışTasarımPenceresineTıklar() {
+        wait.until(ExpectedConditions.elementToBeClickable(designerPage.akışTasarım));
+        designerPage.akışTasarım.click();
+    }
+
+    @And("Kullanıcı formEkle butonuna tıklar")
+    public void kullanıcıFormEkleButonunaTıklar() {
+        designerPage.formEkle.click();
+        //wait.until(ExpectedConditions.elementToBeClickable(designerPage.form1));
+        //actions.doubleClick(designerPage.form1).perform();
+
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        //jse.executeScript("arguments[0].scrollIntoView(true);",designerPage.form1);
+
+        jse.executeScript("arguments[0].click();",designerPage.form1);
     }
 }

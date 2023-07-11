@@ -69,4 +69,30 @@ public class DesignerPage {
     @FindBy(xpath = "//Button[@AutomationId='cmdCampSave']")
     public WebElement kaydet;
 
+    @FindBy(name = "CUCUMBERTEST01 (264)")
+    public WebElement cucumberTest01;
+
+    @FindBy(name = "Akış Tasarımı")
+    public WebElement akışTasarım;
+
+    @FindBy(name = "toolStripButton30")
+    public WebElement formEkle;
+
+    @FindBy(name = "1-Form1")
+    public WebElement form1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
