@@ -78,7 +78,7 @@ public class DesignerPage {
     @FindBy(name = "toolStripButton30")
     public WebElement formEkle;
 
-    @FindBy(name = "1-Form1")
+    @FindBy(name = "Form1")
     public WebElement form1;
 
 

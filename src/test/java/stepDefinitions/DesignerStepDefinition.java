@@ -168,14 +168,17 @@ public class DesignerStepDefinition {
     }
 
     @And("Kullanıcı formEkle butonuna tıklar")
-    public void kullanıcıFormEkleButonunaTıklar() {
+    public void kullanıcıFormEkleButonunaTıklar() throws InterruptedException {
         designerPage.formEkle.click();
+        Thread.sleep(3000);
+        Driver.getDriver().switchTo().frame(1);
+        Thread.sleep(3000);
         //wait.until(ExpectedConditions.elementToBeClickable(designerPage.form1));
         //actions.doubleClick(designerPage.form1).perform();
-
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         //jse.executeScript("arguments[0].scrollIntoView(true);",designerPage.form1);
-
         jse.executeScript("arguments[0].click();",designerPage.form1);
+
+
     }
 }
