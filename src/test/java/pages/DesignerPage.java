@@ -1,7 +1,10 @@
 package pages;
 
+import io.appium.java_client.pagefactory.WindowsFindBys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -69,7 +72,7 @@ public class DesignerPage {
     @FindBy(xpath = "//Button[@AutomationId='cmdCampSave']")
     public WebElement kaydet;
 
-    @FindBy(name = "CUCUMBERTEST01 (264)")
+    @FindBy(name = "CUCUMBERTEST02 (266)")
     public WebElement cucumberTest01;
 
     @FindBy(name = "Akış Tasarımı")
@@ -78,20 +81,25 @@ public class DesignerPage {
     @FindBy(name = "toolStripButton30")
     public WebElement formEkle;
 
-    @FindBy(name = "Form1")
+    @FindBy(name = "Ara")
+    public WebElement formAra;
+
+    @FindBy(name = "Hepsini göster")
+    public WebElement eklenenFormlar;
+
+
+
+    @FindBy(name = "Form.4-Form4")
+    public WebElement form4;
+    // "//Pane[@AutomationId='searchPanelOutbound']/List[@AutomationId='FoundItems']/ListItem[@Name='Form.4-Form4']"
+    // "//Pane[@AutomationId='addFlowOutbound']"
+
+    @FindBy(name = "Form.3-Form3")
+    public WebElement form3;
+    @FindBy(name = "Form.2-Form2")
+    public WebElement form2;
+    @FindBy(name = "Form.1-Form1")
     public WebElement form1;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,5 +12,6 @@ Feature: KampanyaDüzenleme
     And Kullanıcı istediği kampanyayı seçer
     And Kullanıcı kampanya modunu secer
     And Kullanıcı AkışTasarım penceresine tıklar
-    And Kullanıcı formEkle butonuna tıklar
+    And Kullanıcı 4 adet form ekler
+    And Kullanıcı eklenen formları düzenler
 

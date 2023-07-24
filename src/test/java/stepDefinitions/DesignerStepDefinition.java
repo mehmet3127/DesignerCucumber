@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 
+import io.appium.java_client.MobileBy;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,9 +12,6 @@ import pages.DesignerPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 
 public class DesignerStepDefinition {
 
@@ -21,6 +19,8 @@ public class DesignerStepDefinition {
     DesignerPage designerPage = new DesignerPage();
     Actions actions = new Actions(Driver.getDriver());
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 100);
+
+    JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
 
     @Given("Kullanici designer sayfasina gider")
@@ -167,17 +167,33 @@ public class DesignerStepDefinition {
         designerPage.akışTasarım.click();
     }
 
-    @And("Kullanıcı formEkle butonuna tıklar")
-    public void kullanıcıFormEkleButonunaTıklar() throws InterruptedException {
-        designerPage.formEkle.click();
-        Thread.sleep(3000);
-        Driver.getDriver().switchTo().frame(1);
-        Thread.sleep(3000);
-        //wait.until(ExpectedConditions.elementToBeClickable(designerPage.form1));
-        //actions.doubleClick(designerPage.form1).perform();
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        //jse.executeScript("arguments[0].scrollIntoView(true);",designerPage.form1);
-        jse.executeScript("arguments[0].click();",designerPage.form1);
+    @And("Kullanıcı {int} adet form ekler")
+    public void kullanıcıAdetFormEkler(int formAdet) throws InterruptedException {
+
+        int formSayısı = formAdet;
+
+        for (int i = 1; i <= formSayısı; i++) {
+            designerPage.formEkle.click();
+            Thread.sleep(1000);
+        }
+    }
+
+    @And("Kullanıcı eklenen formları düzenler")
+    public void kullanıcıEklenenFormlarıDüzenler() {
+        /*
+        int x =-100;
+        int y = 50;
+        actions.moveByOffset(x, y).doubleClick().perform();
+        */
+
+        //jse.executeScript("arguments[0].click();",designerPage.form4);
+
+        designerPage.formAra.click();
+        designerPage.eklenenFormlar.click();
+        designerPage.form4.click();
+
+
+
 
 
     }
