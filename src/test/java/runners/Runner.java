@@ -6,15 +6,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin={"html:target/cucumber-reports.html",// Bu plagin ile ayri bir raporlama aliyoruz Runner dan calistirmak gerekiyor,target'in altinda cucumber-reports.html'e cift tiklayinca yada sag tiklatipv open in->Explorer deyince aciliyor
-                "json:target/json-reports/cucumber.json", //Bu plagin ile json formatinda rapor aliriz target'in altinda json-reports klasorunun altinda verir Ctrl-Alt-L yapmak gerek
-                "junit:target/xml-report/cucumber.xml"},//Bu plagin ile xml formatinda rapor aliriz target'in altinda xml-report klasorunun altinda verir Ctrl-Alt-L yapmak gerek
-        features="src/test/resources/features",
-        glue="stepDefinitions",
-        tags="@Wde_PozitifLoginTest", // iki tag'ı aynı anda çalıştırmak isterseniz "@gp1 or @gp2"
-        dryRun=false  // true olursa sayfayi acip calistirmadan eksiklik varsa onlari bize gosterir.
-)
 
+        plugin = {"html:target/cucumber-reports.html",//Bu plagin ile ayri bir raporlama aliyoruz Runner dan calistirmak gerekiyor,target'in altinda cucumber-reports.html'e cift tiklayinca yada sag tiklatipv open in->Explorer deyince aciliyor
+                "json:target/json-reports/cucumber.json",//Bu plagin ile json formatinda rapor aliriz target'in altinda json-reports klasorunun altinda verir Ctrl-Alt-L yapmak gerek
+                "junit:target/xml-report/cucumber.xml"},//Bu plagin ile xml formatinda rapor aliriz target'in altinda xml-report klasorunun altinda verir Ctrl-Alt-L yapmak gerek
+        features = "src/test/resources/features",
+        glue = "stepDefinitions",
+        tags = "@Wde_PozitifLoginTest", // iki tag'ı aynı anda çalıştırmak isterseniz "@gp1 or @gp2"
+        dryRun = false  // true olursa sayfayi acip calistirmadan eksiklik varsa onlari bize gosterir.
+)
 public class Runner {
     /*
      Runner Class'ı TestNG'deki XMl mantığı ile çalışır. Çalıştırmak istediğimiz senaryolara tag belirtiriz
@@ -31,5 +31,4 @@ public class Runner {
     dryRun = true; dersek testimizi çalıştırmadan eksik adımları bize verir
     dryRun = false; testlerimizi driver ile çalıştırır.
    */
-
 }

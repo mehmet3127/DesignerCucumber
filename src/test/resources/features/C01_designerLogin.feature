@@ -1,7 +1,7 @@
-Feature: Designer_Login
+Feature:Designer_Login
 
 
-  @PozitifLoginTest
+  @DesignerPozitifLoginTest
   Scenario: TC01 Kullanıcı Kullanıcı Bilgilerini Girer
 
     Given Kullanici designer sayfasina gider

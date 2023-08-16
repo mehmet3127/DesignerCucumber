@@ -1,9 +1,7 @@
 package stepDefinitions;
 
 
-import io.appium.java_client.MobileBy;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +17,6 @@ public class DesignerStepDefinition {
     DesignerPage designerPage = new DesignerPage();
     Actions actions = new Actions(Driver.getDriver());
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 100);
-
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
 
@@ -51,7 +48,8 @@ public class DesignerStepDefinition {
         Thread.sleep(5000);
         String windows = Driver.getDriver().getWindowHandles().iterator().next();
         Driver.getDriver().switchTo().window(windows).getTitle();
-
+        Thread.sleep(70000);
+        Driver.closeDriver();
 
     }
 
@@ -185,16 +183,11 @@ public class DesignerStepDefinition {
         int y = 50;
         actions.moveByOffset(x, y).doubleClick().perform();
         */
-
         //jse.executeScript("arguments[0].click();",designerPage.form4);
-
         designerPage.formAra.click();
         designerPage.eklenenFormlar.click();
         designerPage.form4.click();
 
-
-
-
-
     }
+
 }
